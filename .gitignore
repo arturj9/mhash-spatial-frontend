@@ -1,11 +1,11 @@
-# Isso ignora pastas geradas automaticamente pelo Unity
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
+# Remova a barra do início para o Git ignorar essas pastas em qualquer subpasta
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
 
 # Isso ignora arquivos de cache de memória
 /[Mm]emoryCaptures/
