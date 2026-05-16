@@ -1,1 +1,1 @@
-"# mhash-spatial-frontend" 
+# Mhash Spatial Frontend
