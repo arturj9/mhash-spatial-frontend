@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/_MHash_Vault/Scenes/MHash_Vault.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 0ac1da60530f37f4fa37ce6e344aa029, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 3871f8669de78f942b755c74da79d40a, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: e3b96b07d08f4254aa6409faa3c71f36, type: 2}
   m_UseUCBPForAssetBundles: 0
