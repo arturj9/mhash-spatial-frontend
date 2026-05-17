@@ -1,9 +1,7 @@
 # 🔐 MHash Vault - Meu Primeiro Ambiente VR
 
-===================================================================
-**RESIDÊNCIA EM TIC 29 - WEB 3.0**
-**PROJETO FINAL:** MEU PRIMEIRO AMBIENTE VR
-===================================================================
+* **RESIDÊNCIA EM TIC 29 - WEB 3.0**
+* **PROJETO FINAL:** MEU PRIMEIRO AMBIENTE VR
 
 ## 📖 1. Descrição Geral do Projeto
 Este projeto consiste em uma experiência imersiva em Realidade Virtual que simula um cofre-forte de criptomoedas de alta tecnologia (cyberpunk). O objetivo principal é demonstrar os fundamentos de XR, otimização de materiais e navegação em ambientes virtuais 3D desenvolvidos na engine Unity.
