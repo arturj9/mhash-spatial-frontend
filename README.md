@@ -1,45 +1,39 @@
-# 🔐 MHash Vault - Meu Primeiro Ambiente VR
+# 🔐 MHash Vault - Ambiente VR Interativo
+
+**Nome Completo:** Artur Jardel Soares Gomes
 
 * **RESIDÊNCIA EM TIC 29 - WEB 3.0**
-* **PROJETO FINAL:** MEU PRIMEIRO AMBIENTE VR
+* **PROJETO:** Módulo Avançado - Primeira Experiência VR Interativa
 
-## 📖 1. Descrição Geral do Projeto
-Este projeto consiste em uma experiência imersiva em Realidade Virtual que simula um cofre-forte de criptomoedas de alta tecnologia (cyberpunk). O objetivo principal é demonstrar os fundamentos de XR, otimização de materiais e navegação em ambientes virtuais 3D desenvolvidos na engine Unity.
+---
 
-## 🛠️ 2. Especificações Técnicas
-* **Engine:** Unity 6 LTS (Versão compatível com o Meta SDK)
-* **Render Pipeline:** Universal Render Pipeline (URP)
-* **Plataforma de Destino:** Android (Meta Quest)
-* **SDK Utilizado:** Meta XR Core SDK / Interaction SDK
+## 📖 1. Apresentando o Projeto e Contexto no Metaverso
+Este projeto é uma experiência imersiva em Realidade Virtual que simula um **cofre-forte e validador de criptomoedas de alta tecnologia (cyberpunk)**. 
 
-## 🏢 3. Estrutura do Ambiente (Hierarquia)
-O cenário foi construído de forma fechada e otimizada, contendo:
-* **Ambiente (Environment):** * 1 Plano de Chão (Plane) com material metálico escuro e reflexivo.
-  * 1 Teto (Ceiling) e 4 Paredes (Walls) configuradas com paleta industrial.
-  * 1 Porta de Ficção Científica (Sci-Fi Gate) como ponto focal.
-  * 2 Racks de Servidores de segurança.
-* **Interagíveis (Interactables):**
-  * 1 Pedestal centralizado de autenticação biométrica.
-  * 3 Tokens de Criptomoedas flutuantes (`MHash_Token`).
-* **Iluminação e Câmera:** Iluminação interna customizada (`Key_Light` em tom azul-ciano), Skybox configurado e `[BuildingBlock] Camera Rig`.
+**Contexto e Objetivos:** No ecossistema do Metaverso, este projeto se enquadra no contexto da **Indústria e Segurança Digital**. Ele representa uma área restrita e funcional onde o usuário realiza a validação física de tokens holográficos (MHash) por meio de um "Smart Contract" visual. O objetivo é demonstrar como controles de acesso e operações de blockchain podem ser executados de forma tátil, interativa e visualmente responsiva dentro da Realidade Virtual.
 
-## ⌨️ 4. Instruções de Navegação e Controles (PC)
-A movimentação inicial foi configurada para funcionar diretamente no PC através do script customizado `PCNavigator`, que possui sistema de física integrado por Character Controller, impedindo que o usuário atravesse as paredes.
+## ⚙️ 2. Interação Funcional Obrigatória (C#)
+Para garantir que a experiência vá além de uma cena estática, foi desenvolvida uma mecânica de "Puzzle de Segurança" utilizando a mira central (Raycast):
+* **O Gatilho:** O jogador interage primeiro com o Sensor Biométrico.
+* **A Lógica:** Um script C# centralizado (`SistemaDeSeguranca.cs`) entra em ação, gerando uma sequência randômica para os três tokens coloridos e atualizando um painel holográfico de UI.
+* **A Ação e Feedback:** O usuário deve clicar nos Tokens na ordem exata. Ao serem ativados, o script manipula a propriedade de material em tempo real (`_EmissionColor`), fazendo o token brilhar (Efeito Neon).
+* **O Resultado:** Se a senha estiver correta, a iluminação geral da sala e os tokens ficam verdes; se errar, o ambiente entra em alerta de segurança (vermelho neon).
 
-* **W, A, S, D:** Movimentam o jogador (Frente, Esquerda, Trás, Direita).
-* **Movimento do Mouse:** Rotaciona a câmera para olhar ao redor em 360°.
-* **Tecla ESC:** Libera o ponteiro do mouse na tela.
+## 🏢 3. Estrutura do Ambiente (Cena)
+O cenário foi construído e otimizado contendo todos os requisitos estruturais solicitados:
+* **Ambiente Base:** 1 Plano de Chão (Plane) com material reflexivo, 1 Teto, 4 Paredes, 1 Porta Sci-Fi, 2 Racks de Servidores e **Skybox** configurado.
+* **Objetos Interagíveis (com Box Colliders):** 1 Pedestal (Sensor Biométrico) e 3 Tokens de Criptomoedas (Roxo, Amarelo e Laranja).
+* **Especificações:** Unity 6 (URP) preparado para Android (Meta Quest). O SDK da Meta foi mantido configurado na API Mínima 10 (Android 10), atendendo ao escopo do projeto.
 
-## 📁 5. Organização do Projeto e Como Executar
-O repositório segue boas práticas da indústria, isolando os arquivos nativos dos pacotes de terceiros:
-* `_MHash_Vault/`: Pasta principal contendo todos os materiais (`/Materials`), cenas (`/Scenes`), scripts (`/Scripts`) e texturas (`/Textures`) criados para o projeto.
-* As pastas de assets de terceiros (`iPoly3D`, `ScifiOfficeLite`, etc.) foram mantidas intocadas na raiz para preservar referências, tendo apenas as cenas de "Demo" removidas para otimizar o peso do projeto.
+## ⌨️ 4. Instruções de Navegação e Controles (PC Editor)
+A movimentação inicial foi configurada para funcionar perfeitamente no PC, sem depender exclusivamente dos óculos VR:
+* **W, A, S, D:** Movimentam o jogador (com física de colisão nas paredes).
+* **Movimento do Mouse:** Rotação da câmera em 360°.
+* **Clique Botão Esquerdo:** Dispara a interação no objeto que estiver exatamente no centro da tela (Crosshair).
 
-**Para testar:** Abra a cena `MHash_Vault` localizada em `Assets/_MHash_Vault/Scenes/` e pressione *Play* no Unity Editor.
+## 🧠 5. Processo de Criação e Dificuldades Enfrentadas
+Durante o desenvolvimento desta experiência imersiva, enfrentei desafios reais de integração que geraram ótimos aprendizados:
 
-## 🧠 6. Reflexão sobre o Aprendizado e Solução de Problemas
-Durante o desenvolvimento desta experiência, foram consolidados conceitos práticos de importação de SDKs para VR, gerenciamento de builds e aplicação de física. Além disso, enfrentei desafios reais de integração que geraram ótimos aprendizados sobre o Unity:
-
-* **Desafio dos Materiais (Pink Screen):** Ao importar pacotes antigos da Asset Store para o projeto configurado em URP, os objetos ficaram com a cor rosa. Aprendi que isso ocorre por incompatibilidade entre o motor antigo (Standard) e o novo (URP). Resolvi o problema isolando os materiais e utilizando o "Render Pipeline Converter". Nos casos de falha do conversor, alterei manualmente o Shader para `Universal Render Pipeline > Lit`.
-* **Desafio das Texturas Perdidas (Efeito Neon):** Após a conversão URP, alguns objetos ficaram lisos e refletindo a luz azul intensamente. Descobri que a conversão por vezes desconecta a textura. A solução foi localizar as texturas originais (Base Map) nas pastas do asset e reconectá-las manualmente no Inspector, desativando o canal de "Emission" que retinha cores residuais.
-* **Organização de Repositório:** Aprendi que alterar arquivos nativos de pacotes da loja quebra suas variantes (Missing Prefab Variant). A solução foi adotar a pasta raiz `_MHash_Vault`, garantindo a limpeza do projeto sem destruir as dependências dos assets.
+* **Lógica de Raycast e Conflitos:** Fazer a interação funcionar apenas nos objetos certos foi um desafio. Inicialmente, colocar scripts em múltiplos objetos gerava erros de "NullReference". Resolvi o problema centralizando a lógica em um único script mestre (`SistemaDeSeguranca`) que atira um Raycast do centro da tela e compara as *Tags* / Nomes dos objetos atingidos.
+* **Feedback Visual e Interface (UI):** Tive dificuldades em renderizar emojis para representar os tokens no painel holográfico, pois a fonte padrão do TextMeshPro os transformava em blocos brancos. Resolvi isso utilizando caracteres universais combinados com formatação em "Rich Text" (Hexadecimal) diretamente no C#, pintando o texto em roxo, amarelo e laranja nativamente.
+* **Materiais (Pink Screen):** Ao importar pacotes antigos da Asset Store para o projeto URP, os objetos ficaram com a cor rosa. Resolvi o problema isolando os materiais e utilizando o "Render Pipeline Converter", religando manualmente as texturas base (Albedo) que se desconectavam no processo.
